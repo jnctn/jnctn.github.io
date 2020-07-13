@@ -1,0 +1,186 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "did:example:1234",
+            "name": "John Smith",
+            "induction": {
+                "type": "Site Induction",
+                "name": "Somewhere Work Site",
+                "reference": "HAZCHEM",
+                "credentialAuthority": "did:jnctn:76e12ec712ebc6f1c221ebfeb1f",
+                "childCredentials": [
+                    {
+                        "type": "UnitStandard",
+                        "id": "12345"
+                    }
+                ]
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "name",
+        "induction"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "did:example:1234"
+            ]
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "John Smith"
+            ]
+        },
+        "induction": {
+            "$id": "#/properties/induction",
+            "type": "object",
+            "title": "The induction schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "type": "Site Induction",
+                    "name": "Somewhere Work Site",
+                    "reference": "HAZCHEM",
+                    "credentialAuthority": "did:jnctn:76e12ec712ebc6f1c221ebfeb1f",
+                    "childCredentials": [
+                        {
+                            "type": "UnitStandard",
+                            "id": "12345"
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "type",
+                "name",
+                "reference",
+                "credentialAuthority",
+                "childCredentials"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "type": {
+                    "$id": "#/properties/induction/properties/type",
+                    "type": "string",
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Site Induction"
+                    ]
+                },
+                "name": {
+                    "$id": "#/properties/induction/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Somewhere Work Site"
+                    ]
+                },
+                "reference": {
+                    "$id": "#/properties/induction/properties/reference",
+                    "type": "string",
+                    "title": "The reference schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "HAZCHEM"
+                    ]
+                },
+                "credentialAuthority": {
+                    "$id": "#/properties/induction/properties/credentialAuthority",
+                    "type": "string",
+                    "title": "The credentialAuthority schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "did:jnctn:76e12ec712ebc6f1c221ebfeb1f"
+                    ]
+                },
+                "childCredentials": {
+                    "$id": "#/properties/induction/properties/childCredentials",
+                    "type": "array",
+                    "title": "The childCredentials schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "type": "UnitStandard",
+                                "id": "12345"
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/induction/properties/childCredentials/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "type": "UnitStandard",
+                                        "id": "12345"
+                                    }
+                                ],
+                                "required": [
+                                    "type",
+                                    "id"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/induction/properties/childCredentials/items/anyOf/0/properties/type",
+                                        "type": "string",
+                                        "title": "The type schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "UnitStandard"
+                                        ]
+                                    },
+                                    "id": {
+                                        "$id": "#/properties/induction/properties/childCredentials/items/anyOf/0/properties/id",
+                                        "type": "string",
+                                        "title": "The id schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "12345"
+                                        ]
+                                    }
+                                }
+                            }
+                        ],
+                        "$id": "#/properties/induction/properties/childCredentials/items"
+                    }
+                }
+            }
+        }
+    }
+  }
